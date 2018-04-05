@@ -5,4 +5,12 @@
 
 export const environment = {
   production: false
+  , firebase : {
+    apiKey: "AIzaSyCKbTeGx732Fu-MqSRTW036gOwiEIUeV6w",
+    authDomain: "basededatostodo.firebaseapp.com",
+    databaseURL: "https://basededatostodo.firebaseio.com",
+    projectId: "basededatostodo",
+    storageBucket: "",
+    messagingSenderId: "535040274816"
+  }
 };

@@ -1,16 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Firebase
+import {  AngularFireModule } from "angularfire2";
+import { environment } from "../environments/environment";
+import { AngularFireDatabaseModule } from "angularfire2/database";
+
 import { AppComponent } from './app.component';
+import { TodoComponent } from './components/todo/todo.component';
+
+import {  TodoService } from "./services/todo.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule
+    , AngularFireModule.initializeApp( environment.firebase )
+    , AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

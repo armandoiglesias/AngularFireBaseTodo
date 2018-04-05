@@ -1,0 +1,29 @@
+<div class="form-group">
+  <label for=""></label>
+  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Insert Todo" #itemTitle>
+  <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block" (click)="addTodo(itemTitle)">
+    <i class="fa fa-plus-circle" ></i>
+  </button>
+
+</div>
+
+
+
+<ul class="list-group" *ngIf="todoListArray.length > 0" >
+  <li class="list-group-item list-group-item-action d-flex justify-content-between" *ngFor="let item of todoListArray" >
+
+    <span (click)="updateTodo(item.$key, item.isChecked)" 
+    [class.text-sucess]="item.isChecked"
+    >
+        <i [ngClass]="item.isChecked ?  'fa fa-check-circle' : 'fa fa-circle' "
+        ></i>
+    </span>
+
+    <span class="text-danger" (click)="deleteTodo(item.$key)" >
+        <i class="fa fa-trash" ></i>
+    </span>
+    {{item.title}}
+
+    
+  </li>
+</ul>
